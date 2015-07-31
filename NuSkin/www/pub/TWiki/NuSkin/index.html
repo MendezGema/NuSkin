@@ -1,0 +1,502 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<head>
+<script type="text/javascript" src="/alkimia/pub/TWiki/JQueryPlugin/jquery.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/JQueryPlugin/jquery-migrate.js"></script>
+<link rel="stylesheet" href="/alkimia/pub/TWiki/JQueryPlugin/jquery-all.css" type="text/css" media="all" />
+<script type="text/javascript" src="/alkimia/pub/TWiki/JQueryPlugin/jquery-all.js"></script>
+<title> WebHome &lt; NuSkinTemplete &lt; TWiki</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="icon" href="/alkimia/pub/NuSkinTemplete/WebPreferences/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/alkimia/pub/NuSkinTemplete/WebPreferences/favicon.ico" type="image/x-icon" />
+<link rel="alternate" href="http://www.intellibanks.net/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436387" type="application/x-wiki" title="Edit WebHome" />
+<link rel="edit" href="http://www.intellibanks.net/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436387" title="Edit WebHome" />
+<meta name="SCRIPTURLPATH" content="/alkimia/bin" />
+<meta name="SCRIPTSUFFIX" content="" />
+<meta name="TEXT_JUMP" content="Jump" />
+<meta name="TEXT_SEARCH" content="Search" />
+<meta name="TEXT_NUM_TOPICS" content="Number of topics:" />
+<meta name="TEXT_MODIFY_SEARCH" content="Modify search" />
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/alkimia/bin/view/NuSkinTemplete/WebRss" />
+<base href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebHome"></base>
+<!--BEHAVIOURCONTRIB--><script type="text/javascript" src="/alkimia/pub/TWiki/BehaviourContrib/behaviour.compressed.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikilib.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiWindow.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiEvent.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiHTML.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiCSS.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiForm.js"></script>
+<script type="text/javascript" src="/alkimia/pub/TWiki/PatternSkin/pattern.js"></script>
+<script type="text/javascript">
+// Making the toolbar detach and stay at the top of the browser window when scrolling down: the following is 
+// adapted from js found at www.quirksmode.com (doesn't work for lte IE6 because it doesn't support position:fixed)
+var badBrowser = (/MSIE ((5\.5)|6)/.test(navigator.userAgent) && navigator.platform == "Win32");
+
+function setMenuOffset() { 
+	var header = document.getElementById('toolBar');
+	if (!header) return;
+	var currentOffset = document.documentElement.scrollTop || document.body.scrollTop; // body for Safari
+	var startPos = parseInt(setMenuOffset.initialTop) || 200;
+	var desiredOffset = startPos + currentOffset;
+	if (!badBrowser) {
+		if (currentOffset > startPos) {
+			header.style.position = 'fixed';
+			header.style.top = 0 + 'px';
+			$("div.officetools-menu").css("position","fixed");
+		} else {
+			header.style.position = 'static';
+			$("div.officetools-menu").css("position","absolute");
+		}
+	}
+}
+$(document).ready(function() {
+		var x = document.getElementById('toolBar');
+		if (!x) return;
+		setMenuOffset.initialTop = x.offsetTop;
+		setMenuOffset.initialLeft = x.firstChild.offsetLeft;
+		window.onscroll = document.documentElement.onscroll = setMenuOffset;
+		setMenuOffset();
+		/* in Moz 1.7.12/FF 1.5 window.onscroll is wiped when you use the mouse wheel while 
+		the pointer is NOT above a true page element (ie. when it is above the naked documentElement)
+		 ... or something ...
+		Of course Safari doesn't accept document.documentElement.onscroll; Op and IE 7 do */
+});
+</script> 
+<script type="text/javascript" src="/alkimia/pub/TWiki/NuSkin/nuqmenu_v1_4.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+// once the DOM is ready, create the js menus
+jQuery(function($) {
+	$("#webnav").css("display", "block");
+	$("#user").css("display", "block");
+<pre>
+
+
+</pre>
+<pre>new QuickMenu.Menu("restore","officetools");
+new QuickMenu.Menu("viewlatest","officetools");
+new QuickMenu.Menu("create","officetools");
+with (new QuickMenu.Menu("edit","officetools")) {
+Add("WYSIWYG (default)", "/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436387","/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_white_word.png");
+Add("markup (raw) edit", "/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436387;nowysiwyg=1","/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_white_code.png");
+}
+new QuickMenu.Menu("attach","officetools");
+with (new QuickMenu.Menu("settings","officetools")) {
+Add("Edit page preferences (default)", "/alkimia/bin/manage/NuSkinTemplete/WebHome?action=editSettings");
+Add("Set new topic parent", "/alkimia/bin/view/NuSkinTemplete/WebHome?template=TWiki.NuParent");
+}
+new QuickMenu.Menu("acls","officetools");
+new QuickMenu.Menu("subscribe","officetools");
+new QuickMenu.Menu("bookmark","officetools");
+new QuickMenu.Menu("print","officetools");
+new QuickMenu.Menu("pdf","officetools");
+new QuickMenu.Menu("mailto","officetools");
+new QuickMenu.Menu("raw","officetools");
+new QuickMenu.Menu("history","officetools");
+new QuickMenu.Menu("rename","officetools");
+new QuickMenu.Menu("delete","officetools");
+new QuickMenu.Menu("sitemap","officetools");
+new QuickMenu.Menu("newtopic","officetools");
+</pre>
+
+
+
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+// MSIE6/5.5 png fix: the following is from a jQuery tutorial
+var blank = new Image();
+blank.src = '/alkimia/pub/TWiki/QuickMenuSkin/blank.gif';
+ 
+ $(document).ready(function() {
+ //  var badBrowser = (/MSIE ((5\.5)|6)/.test(navigator.userAgent) && navigator.platform == "Win32");
+	if (badBrowser) {
+	  // get all pngs on page
+	  $('img[src$=.png]').each(function() {
+		 if (!this.complete) {
+			this.onload = function() { fixPng(this) };
+		 } else {
+			fixPng(this);
+		 }
+	  });
+	}
+ });
+ 
+ function fixPng(png) {
+	// get src
+	var src = png.src;
+	// set width and height
+	if (!png.style.width) { png.style.width = $(png).width(); }
+	if (!png.style.height) { png.style.height = $(png).height(); }
+	// replace by blank image
+	png.onload = function() { };
+	png.src = blank.src;
+	// set filter (display original image)
+	png.runtimeStyle.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='" + src + "',sizingMethod='scale')";
+ }
+//]]>
+</script><style type="text/css" media="all">
+@import url('/alkimia/pub/TWiki/TWikiTemplates/base.css');
+</style>
+<style type="text/css" media="all">
+
+
+</style>
+<style type="text/css" media="all">
+@import url('/alkimia/pub/TWiki/PatternSkin/layout.css');
+@import url('/alkimia/pub/TWiki/PatternSkin/style.css');
+@import url('/alkimia/pub/TWiki/PatternSkin/colors.css');
+</style>
+<style type="text/css" media="all">
+	/* Styles that are set using variables */
+	.patternBookView .twikiTopRow,
+	.patternWebIndicator a img,
+	.patternWebIndicator a:hover img {
+		background-color:#d0d0d0;
+	}
+	#patternTopBarContents { background-image:url(/alkimia/pub/TWiki/PatternSkin/TWiki_header.gif); background-repeat:no-repeat;}
+	
+	.patternBookView {
+		border-color:#d0d0d0;
+	}
+	.patternPreviewPage #patternMain {
+		/* uncomment to set the preview image */
+		/*background-image:url("/alkimia/pub/TWiki/PreviewBackground/preview2bg.gif");*/
+	}
+	
+</style><style type="text/css" media="all">
+
+
+
+</style>
+<style type="text/css" media="all">
+	@import url("/alkimia/pub/TWiki/PatternSkin/print.css");
+</style>
+<!--[if IE]><style type="text/css" media="screen">
+pre {
+	overflow-x:auto;
+	padding-bottom:expression(this.scrollWidth > this.offsetWidth ? 16 : 0);
+}
+</style>
+<![endif]-->
+<!--[if lte IE 6]> 
+<style type="text/css">
+#patternLeftBar {
+	position:relative; /* IE 5.5 needs this or the contents won't show outside the parent container on print. IE 6.0 needs it only during printable copy! */
+}
+</style><![endif]-->
+<script type="text/javascript" src="/alkimia/pub/TWiki/TWikiJavascripts/twikiStyles.js"></script>
+
+
+<style type="text/css" media="all">
+	@import url('/alkimia/pub/TWiki/NuSkin/nuqmenu_v1_6.css');
+	@import url('/alkimia/pub/TWiki/NuSkin/officetools_v1_2.css');
+	
+</style> 
+
+<!--GENERATED_HEADERS--><!-- twiki_dashboard_addon --> <style type='text/css' media='all'>
+.twDashboardOuter {
+ margin: 0;
+ padding: 0;
+ width: 1040px; /* = 1024 + 2*7 margin + 2 extra */
+}
+.twDashboardOuter div div div ul {
+ padding-left: 1.7em;
+}
+.twDashboardBanner {
+ position: relative;
+ margin: 7px;
+ padding: 0;
+ width: 1024px; /* = 3 * (300w+2*15p+2*1b) + 2*2*7m */
+ height: 150px;
+ -moz-box-shadow: 2px 2px 3px #e8e8e8;
+ -webkit-box-shadow: 2px 2px 3px #e8e8e8;
+ box-shadow: 2px 2px 3px #e8e8e8;
+ -moz-border-radius: 4px;
+ border-radius: 4px;
+ background-color: #dddddd;
+ background-image: url(/alkimia/pub/TWiki/TWikiDashboardImages/golden-gate-sunset.jpg);
+}
+.twDashboardBannerTitle {
+ position: absolute;
+ margin: 10px 15px;
+ padding: 0;
+ font-size: 18pt;
+ font-weight: 600;
+ color: #333333;
+}
+.twDashboardBannerText {
+ position: absolute;
+ margin: 35px 15px;
+ padding: 0;
+ color: #333333;
+}
+.twDashboardBannerButtonRow {
+ position: absolute;
+ bottom: 0;
+ right: 0;
+ margin: 0;
+ padding: 10px 10px;
+ color: #333333;
+}
+.twDashboardBannerButton {
+ float:right;
+}
+.twDashboardBannerButton a {
+ display: inline-block;
+ margin: 5px 10px;
+ padding: 3px 8px;
+}
+.ui-dialog .ui-dialog-content {
+ text-align: left;
+}
+.twDashboardBox {
+ float: left;
+ padding: 7px;
+}
+</style>
+<!-- scroll_box_engine --> <script type='text/javascript'>
+ // inspired by www.dhtmlgoodies.com/index.html?whichScript=scrolling_content
+ var scrollData = new Array();
+ function doScrollCanvas( containerID )
+ {
+  var vPos = scrollData[containerID]['canvasObj'].style.top;
+  if( scrollData[containerID]['doScroll'] ) {
+   vPos = vPos.replace(/[^\-0-9]/g,'') - scrollData[containerID]['verticalStep'];
+   if( vPos/1 + scrollData[containerID]['canvasHeight']/1 < 1 ) { vPos = 0 };
+   scrollData[containerID]['canvasObj'].style.top = vPos + 'px';
+  }
+  setTimeout('doScrollCanvas("' + containerID + '")', scrollData[containerID]['delay']);
+}
+ function doStopScroll()
+ {
+  var containerID = this.id;
+  scrollData[containerID]['doScroll'] = false;
+ }
+ function doStartScroll()
+ {
+  var containerID = this.id;
+  scrollData[containerID]['doScroll'] = true;
+ }
+ function initScrollBox( containerID, delay, vstep, width, height )
+ {
+  var scrollContainer = document.getElementById( containerID );
+  var scrollCanvas = scrollContainer.getElementsByTagName( 'DIV' )[0];
+  if( ! delay ) { delay = 1000; }
+  if( ! vstep ) { vstep = scrollContainer.clientHeight; }
+  if( width )   { scrollContainer.parentNode.style.width = width + 'px'; }
+  if( height )  { scrollContainer.style.height = height + 'px'; }
+  scrollContainer.onmouseover = doStopScroll;
+  scrollContainer.onmouseout = doStartScroll;
+  scrollData[containerID] = new Array();
+  scrollData[containerID]['canvasObj'] = scrollCanvas;
+  scrollData[containerID]['canvasHeight'] = scrollCanvas.offsetHeight;
+  scrollData[containerID]['verticalStep'] = vstep;
+  scrollData[containerID]['delay'] = delay;
+  scrollData[containerID]['doScroll'] = true;
+  scrollCanvas.style.top = scrollData[containerID]['verticalStep'] + 'px';
+  doScrollCanvas( containerID );
+ }
+</script>
+<style type='text/css' media='all'>
+ .scrollBoxOuter {
+  border: solid #d0d0d0 1px;
+  -moz-box-shadow: 2px 2px 3px #e8e8e8;
+  -webkit-box-shadow: 2px 2px 3px #e8e8e8;
+  box-shadow: 2px 2px 3px #e8e8e8;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  width: 300px;
+  padding: 15px;
+  background-image: url(/alkimia/pub/TWiki/ScrollBoxAddOn/gradient-title.png);
+  background-repeat: repeat-x;
+  background-color: #ffffff;
+ }
+ .scrollBoxTitle {
+  text-align:center;
+  font-size:19px;
+  font-weight:bold;
+  color: #333335;
+  margin: -5px 0 0 0;
+  padding: 0 0 12px 0;
+  white-space: nowrap;
+  overflow: hidden;
+ }
+ .scrollBoxTitle a:link,
+ .scrollBoxTitle a:visited {
+  color: #333335;
+ }
+ .scrollBoxContainer {
+  overflow: hidden;
+  height: 40px;
+  padding: 0px;
+  position: relative;
+ }
+ .scrollBoxContent {
+  position: relative;
+  top: 0px;
+  padding: 0px;
+  text-align: justify;
+ }
+ .scrollBoxContent img {
+  padding: 0px;
+  vertical-align: middle;
+ }
+ </style></head>
+<body class="patternViewPage">
+<a name="PageTop"></a>
+<div id="patternScreen">
+<div id="patternPageShadow">
+<div id="patternPage">
+<div id="patternWrapper"><div id="patternOuter">
+<div id="patternFloatWrap">
+<div id="patternMain"><div id="patternClearHeaderCenter"></div>
+<div id="patternMainContents"><div class="patternTop twikiSmallish"><div class="patternHomePath"><span class="twikiRight"> <span class="patternRevInfo">r27 - 2015-07-14 - 18:10:10 - <a href="/alkimia/bin/view/Main/EricBaez" class="twikiLink">EricBaez</a></span></span>You are here: <a href="/alkimia/bin/view/Main/WebHome" class="twikiLink">TWiki</a><span class='twikiSeparator'>&gt;</span><img src="/alkimia/pub/TWiki/TWikiDocGraphics/web-bg-small.gif" border="0" alt="" width="13" height="13" style="background-color:#d0d0d0" />&nbsp;<a href="/alkimia/bin/view/NuSkinTemplete/WebHome">NuSkinTemplete Web</a><span class='twikiSeparator'>&gt;</span><a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebHome" title='Topic revision: 27 (2015-07-14 - 18:10:10)'>WebHome</a><span class='patternRevInfo'></span><br class="twikiClear" /></div><!-- /patternHomePath--><div id="toolBar" class="patternToolBar"><div id="officetoolbar">
+<table id="officetools" class="officetools" cellspacing="0" cellpadding="1"><tr><td>
+<a id='edit' href='/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436387'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_edit.png' alt='edit' title='Edit this page' /></a></td><td><a id='attach' href='/alkimia/bin/attach/NuSkinTemplete/WebHome'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_attach.png' alt='attach' title='Attach a file' /></a></td><td>
+<a id='print' href='/alkimia/bin/view/NuSkinTemplete/WebHome?cover=print'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/printer.png' alt='print' title='Print this page' /></a>
+</td><td>
+<a id='pdf' href='/alkimia/bin/genpdf/NuSkinTemplete/WebHome'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_white_acrobat.png' alt='pdf' title='PDF this page' /></a>
+</td><td>
+<div class="separator"></div>
+</td><td>
+<a id='raw' href='/alkimia/bin/view/NuSkinTemplete/WebHome?raw=on'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_code.png' alt='raw' title='Raw view' /></a>
+</td><td><a id='rename' href='/alkimia/bin/rename/NuSkinTemplete/WebHome'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_go.png' alt='rename' title='Rename/Move' /></a></td><td><a id='delete' href='/alkimia/bin/rename/NuSkinTemplete/WebHome?newweb=Trash&amp;nonwikiword=on'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/cross.png' alt='delete' title='Delete' /></a>
+</td><td><a id='newtopic' href='/alkimia/bin/view/NuSkinTemplete/WebTopicCreator?parent=WebHome'><img src='/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/page_add.png' alt='new' title='Create new page' /></a>
+</td></tr></table></div>
+<div class="clear"></div></div><!-- /patternToolBar--><br class="twikiClear" /></div><!--/patternTop--><div class="twikiContentHeader"></div><div class="patternContent"><div class="patternTopic"> <div class="twDashboardOuter" >
+<div class="twDashboardBanner" style="background-image: url(http://www.intellibanks.net/alkimia/pub/TWiki/TWikiDashboardImages/golden-gate-sunset.jpg); ">
+<div class="twDashboardBannerTitle" style="color:&lt;span style=">
+Welcome to the Skin NuSkinTemplete web</div>
+<div class="twDashboardBannerText" >
+</div>
+<div class="twDashboardBannerButtonRow" style="display: none; ">
+<p />
+</div>
+</div>
+<script> $('.twDashboardBannerButton a').addClass('twikiButton');</script>
+<div style="clear: both;"></div>
+ <!--===== OVERVIEW ============================================-->
+<div class="twDashboardBox">
+<div class="scrollBoxOuter" style="width: 300px; ">
+<div class="scrollBoxTitle" style=""> Overview </div>
+ <div class="scrollBoxContainer" style="height: 200px; overflow:auto; ">
+<p />
+Edit this topic to customize this dashboard. Change the boxes (tiles) to fit the needs of your team. <ul>
+<li> See <a href="/alkimia/bin/view/TWiki/TWikiDashboardAddOn" class="twikiLink">TWiki Dashboard add-on</a> docs.
+</li> <li> Many <a href="/alkimia/bin/view/TWiki/TWikiDashboardImages" class="twikiLink">banner images</a> are available.
+</li></ul> 
+<p />
+</div>
+</div>
+</div>
+<!--===== WEB LINKS ============================================-->
+<div class="twDashboardBox">
+<div class="scrollBoxOuter" style="width: 300px; ">
+<div class="scrollBoxTitle" style=""> <span class="twikiNewLink"><a href="http://www.intellibanks.net/alkimia/bin/edit/TWiki/NuSkinTemplete?topicparent=NuSkinTemplete.WebHome;nowysiwyg=0" rel="nofollow" title="NuSkinTemplete (this topic does not yet exist; you can create it)">NuSkinTemplete</a></span> Web Links </div>
+ <div class="scrollBoxContainer" style="height: 200px; overflow:auto; overflow: hidden;;"> <ul>
+<li> Add useful links here
+</li></ul> 
+<p />
+</div>
+</div>
+</div>
+<!--===== RECENT CHANGES ============================================-->
+<div class="twDashboardBox">
+<div class="scrollBoxOuter" style="width: 300px; ">
+<div class="scrollBoxTitle" style=""> <a href="/alkimia/bin/view/NuSkinTemplete/WebChanges" class="twikiLink">Recent Changes</a> </div>
+ <div class="scrollBoxContainer" style="height: 200px; overflow:auto; overflow: hidden;;"> <ul>
+<li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebPreferences" title="By EricBaez: NuSkinTemplete Web Preferences The following settings are web preferences of the NuSkinTemplete web. These preferences override the site level preferences...">Web Preferences</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebHome" title="By EricBaez: Edit this topic to customize this dashboard. Change the boxes (tiles) to fit the needs of your team. See TWiki Dashboard add on docs. Many banner images...">Web Home</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebNotify" title="By EricBaez: Web Notification This is a subscription service to be automatically notified by e mail when topics change in this 1 web. This is a convenient service, so you do...">Web Notify</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/TopicoVeronica" title="By EricBaez: Title Article text. Comments">Topico Veronica</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/PruebaSkin" title="By VeronicaLopezAdorno: Title ! WEB UTILITIES icon:searchtopic Web search advanced search icon:index Web topic list all...">Prueba Skin</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebStatistics" title="By TWikiContributor: Statistics for NuSkinTemplete Web Month: Topic views: Topic saves: File uploads: Most popular topic views: Top viewers: Top contributors...">Web Statistics</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebTopMenu" title="By TWikiContributor: Top Menu of NuSkinTemplete Web This topic defines the menu structure of the NuSkinTemplete web, used by the TopMenuSkin.  1 Web` Create...">Web Top Menu</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebLeftBar" title="By TWikiContributor:  1 Web Create New Topic Index Search Changes Notifications RSS Feed Statistics Preferences">Web Left Bar</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebTopicList" title="By TWikiContributor: ">Web Topic List</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebSearchAdvanced" title="By TWikiContributor: ">Web Search Advanced</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebSearch" title="By TWikiContributor: ">Web Search</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebIndex" title="By TWikiContributor: ">Web Index</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebChanges" title="By TWikiContributor: ">Web Changes</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebAtom" title="By TWikiContributor: TWiki`s NuSkinTemplete web The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.">Web Atom</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebCreateNewTopic" title="By TWikiContributor: ">Web Create New Topic</a>
+</li> <li> <a href="http://www.intellibanks.net/alkimia/bin/view/NuSkinTemplete/WebRss" title="By TWikiContributor: /NuSkinTemplete The 1 web of TWiki. TWiki is a Web Based Collaboration Platform for the Enterprise.">Web Rss</a>
+</li></ul> 
+<p />
+</div>
+</div>
+</div>
+<p />
+<!--===== WEB UTILITIES ============================================-->
+<div class="twDashboardBox">
+<div class="scrollBoxOuter" style="width: 300px; ">
+<div class="scrollBoxTitle" style=""> <span class="twikiNewLink"><a href="http://www.intellibanks.net/alkimia/bin/edit/TWiki/NuSkinTemplete?topicparent=NuSkinTemplete.WebHome;nowysiwyg=0" rel="nofollow" title="NuSkinTemplete (this topic does not yet exist; you can create it)">NuSkinTemplete</a></span> Web Utilities </div>
+ <div class="scrollBoxContainer" style="height: 200px; overflow:auto; overflow: hidden;;"> <ul>
+<li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/searchtopic.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebSearch" class="twikiLink">Web search</a> &amp; <a href="/alkimia/bin/view/NuSkinTemplete/WebSearchAdvanced" class="twikiLink">advanced search</a>
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/index.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebTopicList" class="twikiLink">Web topic list</a> - all topics
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/mail.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebNotify" class="twikiLink">Web notify</a> - subscribe to e-mail alerts
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/rss.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebRss" class="twikiLink">RSS</a> &amp; <a href="/alkimia/bin/view/NuSkinTemplete/WebAtom" class="twikiLink">ATOM</a> feeds of topic changes
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/statistics.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebStatistics" class="twikiLink">Web statistics</a>
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/wrench.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebPreferences" class="twikiLink">Web preferences</a> - preferences of this web
+</li> <li class="twikiIconBullet" style="background: url(/alkimia/pub/TWiki/TWikiDocGraphics/topmenu.gif) no-repeat 0 .2em;"> <a href="/alkimia/bin/view/NuSkinTemplete/WebTopMenu" class="twikiLink">WebTopMenu</a> - top menu definition
+</li></ul> 
+<p />
+</div>
+</div>
+</div> <!--===== END ============================================-->
+<div style="clear: both;"></div>
+</div> </div><!-- /patternTopic-->
+<div class="twikiContentFooter"></div></div><!-- /patternContent-->
+<div class="clear"></div>
+<p />
+<div class="patternInfo twikiGrayText"><div class="patternRevInfo">Topic revision: r27 - 2015-07-14 <a href="http://www.intellibanks.net/alkimia/bin/edit/NuSkinTemplete/WebHome?t=1437436388;nowysiwyg=1" target="_top">-</a> <a href="/alkimia/bin/view/Main/EricBaez" class="twikiLink">EricBaez</a></div><!-- /patternRevInfo--></div><!-- /patternInfo-->
+</div><!-- /patternMainContents-->
+</div><!-- /patternMain-->
+</div><!-- /patternFloatWrap-->
+<div class="clear">&nbsp;</div>
+</div><!-- /patternOuter--></div><!-- /patternWrapper--><div id="patternTopBar"><div id="patternTopBarContents"><span id="webtitle">NuSkinTemplete</span><div id="userTopbarInfo"></div></div><div id="menuBarWrapper">
+<div class="MenuBar" id="MenuBar">
+<div class="MenuBarLeft searchBar"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/system-search.png" /> <span>
+<!-- <form enctype="multipart/form-data" name="kinosearch" action="/alkimia/bin/kinosearch/NuSkinTemplete/">
+<input type="hidden" name="web" value="NuSkinTemplete" />
+<input type="text" class="twikiInputField patternFormFieldDefaultColor" name="search" value="Search" size="16" onfocus="this.value='';" onblur="this.value='Search';" /></form> -->
+<form name="quickSearchForm" action="/alkimia/bin/view/NuSkinTemplete/WebSearch"><input type="text" class="twikiInputField" id="quickSearchBox" name="search" value="Search" size="16" onfocus="this.value='';" onblur="this.value='Search';" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="NuSkinTemplete" /></form> </span>
+</div>
+<div class="MenuBarLeft" id="MenuBarLeftMenu">
+</div>
+<div class="MenuBarRight" id="MenuBarRightMenu">
+<table id="functions" cellspacing="0" cellpadding="0" class="qm1">
+<tbody><tr>
+<noscript><td><a href="/alkimia/bin/view/TWiki/NuSkinNoJS" title="JavaScript is disabled. Why?"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/help-browser.png" class="icononly"/></a></td></noscript>
+<td><a id="webnav" title="Local web navigation" style="display:none;"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/go-down.png" class="icononly"/></a>
+<noscript><a href="/alkimia/bin/view/NuSkinTemplete/?template=TWiki.WebNav" title="Local web navigation"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/go-down.png" class="icononly"/></a></noscript>
+</td><td><a id="user" title="User Authentication, data and bookmarks" style="display:none;"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/face-smile.png" class="icononly"/></a>
+<noscript><a href="/alkimia/bin/view/NuSkinTemplete/?template=Main.UserLinks" title="User data and bookmarks"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/face-sad.png" class="icononly"/></a></noscript>
+</td><td><a id="main" title="Usersweb and default home page of the wiki" href="/alkimia/bin/view/Main/WebHome"><img src="/alkimia/pub/TWiki/NuSkin/TangoIcons/system-users.png" class="icononly"/></a>
+</td></td>
+<td><a id="arrow_undo" title="Previous page" href="/alkimia/bin/view/Main/WebHome"><img src="/alkimia/pub/TWiki/NuSkin/FamFamFamSilkIcons/arrow_undo.png" class="icononly"/></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="MenuBarCentre" id="MenuBarCentreMenu">
+<table id="webs" cellspacing="0" cellpadding="0" class="qm1">
+<tbody>
+<tr><td><a id="forum" title="Ask your questions, answer those of others" href="/alkimia/bin/view/Forum/WebHome"><span>Forums</span></a>
+</td><td><a id="blog" title="Tell us about it..." href="/alkimia/bin/view/Blog/WebHome"><span>Blogs</span></a>
+</td><td><a id="groups" title="Access restricted workspaces" href="/alkimia/bin/view/Groups/WebHome"><span>Groups</span></a>
+</td><td><a id="emofs" title="ESOC Mission Operations Facilities &amp; Services" href="/alkimia/bin/view/EMOFS/WebHome"><span>EMOFS</span></a>
+</td><td><a id="km" title="Knowledge Management wiki" href="/alkimia/bin/view/KMan/WebHome"><span>KM</span></a>
+</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div></div><!-- /patternTopBar--><div id="patternBottomBar"><div id="patternBottomBarContents"><div id="patternWebBottomBar"><div class="twikiCopyright"><span class="twikiRight"> <a href="http://twiki.org/"><img src="/alkimia/pub/TWiki/TWikiLogos/T-badge-88x31.gif" alt="This site is powered by the TWiki collaboration platform" width="88" height="31" title="This site is powered by the TWiki collaboration platform" border="0" /></a></span><span class="twikiRight" style="padding:0 10px 0 10px"> <a href="http://www.perl.org/"><img src="/alkimia/pub/TWiki/TWikiLogos/perl-logo-88x31.gif" alt="Powered by Perl" width="88" height="31" title="Powered by Perl" border="0" /></a></span>Intellibanks</div><!--/patternWebBottomBar--></div><!-- /patternBottomBarContents--></div><!-- /patternBottomBar-->
+</div><!-- /patternPage-->
+</div><!-- /patternPageShadow-->
+</div><!-- /patternScreen-->
+</body></html>

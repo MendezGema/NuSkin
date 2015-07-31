@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Contenedor de NuSkin</title>
+	<meta name="description" content="NuSkin">
+	
+	
+    <!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  	<link rel="stylesheet" href="css/zerogrid.css">
+	<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+        <script src="js/contenidoiframe.js"></script>
+</head>
+<body>
+<!--------------Header--------------->
+<header>
+	<div class="wrap-header zerogrid">
+	  <div id="logo"><a href="#"><img src="./images/logo.png"/></a></div>
+		
+		<div id="search">
+		  <div class="button-search"></div>
+          <form name="quickSearchForm" action="/alkimia/bin/view/NuSkinTemplete/WebSearch">
+			<input type="text" class"twikiInputField" id="quickSearchBox" name="search" value="Search" onfocus="this.value=''; onblur="this.value='Search';">
+        <input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="NuSkinTemplete" /></form>
+
+            
+         
+		</div>
+  </div>
+</header>
+
+<nav>
+	<div class="wrap-nav zerogrid">
+		<div class="menu">
+			<ul>
+				<li><a href="#">Forums</a></li>
+				<li><a href="#">Blogs</a></li>
+				<li><a href="#">Groups</a></li>
+				<li><a href="#">EMOFS</a></li>
+				<li><a href="#">KM</a></li>  
+		  </ul>
+		</div>
+		
+		<div class="minimenu"><div>MENU</div>
+			<select onchange="location=this.value">
+				<option></option>
+				<option value="#">Forums</option>
+				<option value="#">Blogs</option>
+				<option value="#">Groups</option>
+				<option value="#">EMOFS</option>
+				<option value="#">KM</option>
+			</select>
+		</div>		
+	</div>
+</nav>
+<!--- menu---->
+ </section>
+ <section class="submenu">
+   <input id="iconos" type="image" src="FamFamFamSilkIcons/page_edit.png" onclick="edit()">
+	<input id="iconos" type="image" src="FamFamFamSilkIcons/page_attach.png" onclick="attach()">
+	<input id="iconos" type="image" src="FamFamFamSilkIcons/page_code.png" onclick="view()">
+	<div id="separador"></div>
+	<input id="iconos" type="image" src="FamFamFamSilkIcons/page_go.png" onclick="rename()">
+	<input id="iconos" type="image" src="FamFamFamSilkIcons/cross.png" onclick="eliminar()">
+	<input id="iconos" type="image" src="FamFamFamSilkIcons/page_add.png" onclick="create()">
+    
+    <a href="file:///C:/Users/Misaki/Pictures/version%20veta/pruebbaa/veta0.2/veta0.2/SkinGemaPrueba/index.html"> <input id="iconos"  type="image" src="images/small_edit-undo.gif"> </a>
+    </section>
+   <section>
+<!------------->
+<div class="wrap-header zerogrid">
+  <div id="logo2"><img src="images/tarde.jpg"></div></div>
+  <iframe src="contenedor.html" id="frame1" ></iframe>
+
+
+
+<!--------------Footer--------------->
+<footer>
+ <div class="wrap-footer zerogrid">
+    <div class="row copyright">
+    <div class="text-footer">Intellibanks<p style="line-height: 2em; font-size:7pt"><a href="http://twiki.org/"><img style="float: right;" src="images/T-badge-88x31.gif" alt="descripcion"/></a></p><a href="https://www.perl.org/"><img style="float: right;" src="images/perl-logo-88x31.gif" alt="descripción" /></div>
+  </div>
+</footer>
+
+</body></html>
